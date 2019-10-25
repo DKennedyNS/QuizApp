@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Quiz Me</string>
+    <string name="welcome_message">Welcome to The Quiz App!</string>
+    <string name="signup_message">Sign up below to get started:</string>
+    <string name="name">Name:</string>
+    <string name="w_number">W Number:</string>
+    <string name="btn_start">Start Quiz</string>
+    <string name="score">You scored:</string>
+    <string name="try_again">Try Again</string>
+    <string name="grade">%1i %%</string>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Base.Theme.MaterialComponents.Light.DarkActionBar"
+    tools:context=".Main2Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:id="@+id/topSpace"
+            android:layout_width="match_parent"
+            android:layout_height="50dip" />
+
+        <TextView
+            android:id="@+id/txtTerm"
+            android:layout_width="match_parent"
+            android:layout_height="100dip"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="15dip"
+            android:paddingTop="30dip"
+            android:paddingRight="15dip"
+            android:text="This is a term"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:id="@+id/spaceTerm"
+            android:layout_width="match_parent"
+            android:layout_height="50dip" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnTopLeft"
+                    android:layout_width="180dip"
+                    android:layout_height="180dip"
+                    android:backgroundTint="?attr/colorAccent" />
+
+                <Space
+                    android:id="@+id/spaceTopRow"
+                    android:layout_width="21dip"
+                    android:layout_height="13dip" />
+
+                <Button
+                    android:id="@+id/btnTopRight"
+                    android:layout_width="180dip"
+                    android:layout_height="180dip"
+                    android:backgroundTint="?attr/colorAccent" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <Button
+                    android:id="@+id/btnBottomLeft"
+                    android:layout_width="180dip"
+                    android:layout_height="180dip"
+                    android:backgroundTint="?attr/colorAccent" />
+
+                <Space
+                    android:id="@+id/spaceBottomRow"
+                    android:layout_width="21dip"
+                    android:layout_height="13dip" />
+
+                <Button
+                    android:id="@+id/btnBottomRight"
+                    android:layout_width="180dip"
+                    android:layout_height="180dip"
+                    android:backgroundTint="?attr/colorAccent" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
