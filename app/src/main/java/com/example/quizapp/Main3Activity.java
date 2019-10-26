@@ -19,7 +19,7 @@ public class Main3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
 
         btnTryAgain = findViewById(R.id.btnTryAgain);
-        txtMark = findViewById(R.id.txtTerm);
+        txtMark = findViewById(R.id.txtMark);
 
         txtMark.setText(getString(R.string.grade, Main2Activity.score));
 

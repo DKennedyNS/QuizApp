@@ -8,9 +8,12 @@
     tools:context=".Main2Activity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <Space
@@ -39,51 +42,73 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="30dip"
+            android:layout_marginBottom="30dip"
             android:paddingLeft="15dip"
             android:paddingRight="15dip">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="20">
 
                 <Button
                     android:id="@+id/btnTopLeft"
-                    android:layout_width="180dip"
-                    android:layout_height="180dip"
-                    android:backgroundTint="?attr/colorAccent" />
-
-                <Space
-                    android:id="@+id/spaceTopRow"
-                    android:layout_width="21dip"
-                    android:layout_height="13dip" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:backgroundTint="?attr/colorSecondary"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorButtonNormal"
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/btnTopRight"
-                    android:layout_width="180dip"
-                    android:layout_height="180dip"
-                    android:backgroundTint="?attr/colorAccent" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:backgroundTint="?attr/colorSecondary"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorButtonNormal"
+                    android:textSize="14sp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_weight="20">
 
                 <Button
                     android:id="@+id/btnBottomLeft"
-                    android:layout_width="180dip"
-                    android:layout_height="180dip"
-                    android:backgroundTint="?attr/colorAccent" />
-
-                <Space
-                    android:id="@+id/spaceBottomRow"
-                    android:layout_width="21dip"
-                    android:layout_height="13dip" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:backgroundTint="?attr/colorSecondary"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorButtonNormal"
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/btnBottomRight"
-                    android:layout_width="180dip"
-                    android:layout_height="180dip"
-                    android:backgroundTint="?attr/colorAccent" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:backgroundTint="?attr/colorSecondary"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorButtonNormal"
+                    android:textSize="14sp" />
             </TableRow>
 
         </TableLayout>

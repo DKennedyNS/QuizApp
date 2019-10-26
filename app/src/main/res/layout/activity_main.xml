@@ -11,6 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -18,7 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="false"
+            android:paddingLeft="15dip"
             android:paddingTop="30dip"
+            android:paddingRight="15dip"
             android:text="@string/welcome_message"
             android:textAlignment="center"
             android:textColor="?attr/colorPrimary"
@@ -76,6 +81,7 @@
             android:layout_gravity="center_horizontal"
             android:backgroundTint="?attr/colorAccent"
             android:text="@string/btn_start"
+            android:textColor="?attr/colorButtonNormal"
             app:iconTint="?attr/colorAccent" />
 
     </LinearLayout>

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -21,6 +22,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.InterruptedIOException;
 import java.nio.Buffer;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,7 +46,7 @@ public class Main2Activity extends AppCompatActivity {
 
     int currentQuestion = 0;
     String correctAnswer;
-    public static int score = 0; //Current quiz grade
+    public static int score; //Current quiz grade
     int questionWeight = 10; //how much each question is worth.
 
 
@@ -70,10 +72,12 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnTopLeft.getText() == correctAnswer){
-                    btnTopLeft.setBackgroundColor(Color.GREEN);
-                    score =+ questionWeight;
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.correct),Toast.LENGTH_SHORT);
+                    toast.show();
+                    score += questionWeight;
                 }else{
-                    btnTopLeft.setBackgroundColor(Color.RED);
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.incorrect),Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 currentQuestion++;
                 loadQuestion(v);
@@ -83,10 +87,12 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnTopRight.getText() == correctAnswer){
-                    btnTopRight.setBackgroundColor(Color.GREEN);
-                    score =+ questionWeight;
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.correct),Toast.LENGTH_SHORT);
+                    toast.show();
+                    score += questionWeight;
                 }else{
-                    btnTopRight.setBackgroundColor(Color.RED);
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.incorrect),Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 currentQuestion++;
                 loadQuestion(v);
@@ -96,10 +102,12 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnBottomLeft.getText() == correctAnswer){
-                    btnBottomLeft.setBackgroundColor(Color.GREEN);
-                    score =+ questionWeight;
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.correct),Toast.LENGTH_SHORT);
+                    toast.show();
+                    score += questionWeight;
                 }else{
-                    btnBottomLeft.setBackgroundColor(Color.RED);
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.incorrect),Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 currentQuestion++;
                 loadQuestion(v);
@@ -109,10 +117,12 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnBottomRight.getText() == correctAnswer){
-                    btnBottomRight.setBackgroundColor(Color.GREEN);
-                    score =+ questionWeight;
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.correct),Toast.LENGTH_SHORT);
+                    toast.show();
+                    score += questionWeight;
                 }else{
-                    btnBottomRight.setBackgroundColor(Color.RED);
+                    Toast toast = Toast.makeText(v.getContext(),getString(R.string.incorrect),Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 currentQuestion++;
                 loadQuestion(v);
@@ -127,10 +137,11 @@ public class Main2Activity extends AppCompatActivity {
             String [] separatedLine; //String array to hold the separated values
 
             //File quizFile = getFileStreamPath("android.resource://com.example.quizapp/raw/quiz.txt");
-            FileReader reader = new FileReader("android.resource://com.example.quizapp/raw/quiz.txt");
+            InputStream iStream = this.getResources().openRawResource(R.raw.quiz);
+            InputStreamReader reader = new InputStreamReader(iStream);
             BufferedReader buffer = new BufferedReader(reader);
             //While the reader is ready, keep reading lines
-            while (reader.ready()){
+            while (buffer.ready()){
                 line = buffer.readLine();
                 separatedLine = line.split(",");
                 answerMap.put(separatedLine[1], separatedLine[0]); //uses definitions as keys
@@ -142,16 +153,16 @@ public class Main2Activity extends AppCompatActivity {
             buffer.close();
 
         }catch(FileNotFoundException e){
-            Log.println(Log.ERROR,"Error:", "File not found");
+            Log.e("OOPS:", "File Not Found");
         }catch(IOException e){
-            Log.println(Log.ERROR,"Error:", "IO Exception ");
+            Log.e("OOPS","IO Exception");
         }
 
     }
 
     private void loadQuestion(View v){
         //Load next question, if one remains. If not, finish quiz.
-        if(currentQuestion < 10){
+        if(!answerMap.isEmpty()){
             //For each question, get the term and display it, then get the correct answer and add it
             //to the list of options for the buttons.
             txtTerm.setText(answerMap.remove(definitionsList.get(currentQuestion)));

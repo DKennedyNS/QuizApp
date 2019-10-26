@@ -7,5 +7,7 @@
     <string name="btn_start">Start Quiz</string>
     <string name="score">You scored:</string>
     <string name="try_again">Try Again</string>
-    <string name="grade">%1i %%</string>
+    <string name="grade">%1d %%</string>
+    <string name="correct">Correct!</string>
+    <string name="incorrect">Incorrect.</string>
 </resources>
